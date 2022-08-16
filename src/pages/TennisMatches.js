@@ -13,13 +13,13 @@ var month = ((today.getMonth()+1) < 10 ? ('0'+(today.getMonth()+1)) : (today.get
 var jour =  ((today.getDate()) < 10 ? ('0'+(today.getDate())) : (today.getDate()))
 var datetoday = today.getFullYear()+'-'+ month+'-'+ jour;
 
-const FootballMatches = () => {
+const TennisMatches = () => {
 
   const [projects, setProjects] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const fetchData = () => {
-    fetch("https://api.sofascore.com/api/v1/sport/football/scheduled-events/"+ datetoday, {
+    fetch("https://api.sofascore.com/api/v1/sport/tennis/scheduled-events/"+ datetoday, {
         "headers": {
           "accept": "*/*",
           "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
@@ -107,31 +107,6 @@ const FootballMatches = () => {
   }
 
 
-
- /*  const projects = [
-    {
-      id:"1",
-      title: "Coupe du monde - 22/11/22, 2:00 PM",
-      description: "Phase de groupes - Groupe D - Journée 1 sur 3",
-      team1:"Real Madrid",
-      team2:"Bayern Munich",
-      imgUrl1: "https://api.sofascore.app/api/v1/team/5367/image" ,
-      imgUrl2: "https://api.sofascore.app/api/v1/team/5367/image" 
-    },
-    { 
-      id:"2",
-      title: "Coupe du monde - 22/11/22, 11:00 AM",
-      description: "Phase de groupes - Groupe D - Journée 2 sur 3",
-      imgUrl: tnvsaus,
-    },
-    { 
-      id:"3",
-      title: "Coupe du monde - 30/11/22, 4:00 PM",
-      description: "Phase de groupes - Groupe D - Journée 3 sur 3",
-      imgUrl: tnvsfr,
-    },
-  ]; */
-
   return (
     <section className="project" id="project">
       <Container>
@@ -165,4 +140,4 @@ const FootballMatches = () => {
   )
 }
 
-export default FootballMatches;
+export default TennisMatches;
