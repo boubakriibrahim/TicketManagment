@@ -21,23 +21,15 @@ const TennisMatches = () => {
   const fetchData = () => {
     fetch("https://api.sofascore.com/api/v1/sport/tennis/scheduled-events/"+ datetoday, {
         "headers": {
-          "accept": "*/*",
-          "accept-language": "fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7",
-          "cache-control": "max-age=0",
-          "if-none-match": "W/\"36050c2ee9\"",
-          "sec-ch-ua": "\".Not/A)Brand\";v=\"99\", \"Google Chrome\";v=\"103\", \"Chromium\";v=\"103\"",
-          "sec-ch-ua-mobile": "?0",
-          "sec-ch-ua-platform": "\"Windows\"",
-          "sec-fetch-dest": "empty",
-          "sec-fetch-mode": "cors",
-          "sec-fetch-site": "same-site"
+          authority: 'api.sofascore.com',
+          accept: '*/*',
+          'accept-language': 'fr-FR,fr;q=0.9,en-US;q=0.8,en;q=0.7',
+          'cache-control': 'max-age=0',
+          origin: 'https://www.sofascore.com',
+          referer: 'https://www.sofascore.com/',
+          'sec-ch-ua': '^\^Chromium^^;v=^\^104^^, ^\^'
         },
-        "referrer": "https://www.sofascore.com/",
-        "referrerPolicy": "strict-origin-when-cross-origin",
-        "body": null,
-        "method": "GET",
-        "mode": "cors",
-        "credentials": "omit"
+        "method": "GET"
       })
       .then((response) => response.json())
       .then((data) => {
